@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <title>Document</title>
+  <script>
+    // $.ajax 는 객체를 매개변수로 한다.
+    // 매개변수에는 최소한 url, method, success 가 필요하다.
+    // success 함수의 매개변수는 서버가 보내는 결과이다.
+    // 서버가 보낸 JSON 문자열은 자동으로 객체로 변환된다 (JSON.parse() 금지).
+    $.ajax({
+      url: 'https://sample.bmaster.kro.kr/contacts/1601087500167', method: 'get',
+      success:function(result) {
+        console.log(result);
+      }
+    });
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

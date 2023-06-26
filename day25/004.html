@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AJAX - JSON 형식</title>
+</head>
+<body>
+  <script>
+    // 자바스크립트에서 데이터를 주고 받는 형식 JSON
+    // JS 의 객체 => 이 객체를 서버로 보내면 서버가 JS 인 경우만 이해할 수 있다.
+    const person = {
+      name: '홍길동', age: 20
+    };
+    // 인터넷에서 데이터를 주고 받는 표준 : urlencoded 와 JSON
+
+    // 객체를 JSON 문자열로 변환
+    const json = JSON.stringify(person);
+    console.log(json);
+
+    // JSON 문자열을 객체로 변환
+    const obj = JSON.parse(json);
+    console.log(obj);
+  </script>
+</body>
+</html>

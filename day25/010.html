@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <title>Document</title>
+  <script>
+    // AJAX 는 프론트와 서버간 병렬로 통신하는 기법이다.
+    // $.ajax() 는 jQuery 에서 제공하는 AJAX 함수이다.
+    $(document).ready(function() {
+      $.ajax({
+        url: 'https://sample.bmaster.kro.kr/contacts/1601087500167', method: 'get',
+        success: function(x) {
+          // success 의 매개변수는 서버에서 보내준 결과이다.
+          $('#name').text(x.name);
+          $('#tel').text(x.tel);
+          $('#address').text(x.address);
+          $('#photo').attr('src', x.photo);
+        }
+      });
+    });
+  </script>
+</head>
+<body>
+  <p id="name"></p>
+  <p id="tel"></p>
+  <p id="address"></p>
+  <img id="photo">
+</body>
+</html>

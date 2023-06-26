@@ -1,0 +1,31 @@
+<!--
+  jQuery 함수
+  - text(); : input 이 아닌 요소들의 값
+  - val(); : input 요소의 값
+  - attr(); : 속성
+  - css(); : 스타일
+  - next(); : 뒷 요소
+  - prev(); : 앞 요소
+-->
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        $('#plus').on('click', function() {
+          $('#plus').next().text('plus 버튼 클릭');
+          // plus 버튼을 클릭하면 minus 버튼의 글자를 -- 로 바꾸고싶다 (#minus X)
+          $('#plus').next().next().text('--');
+        });
+        $('#minus').on('click', function() {
+          $('#minus').prev().text('minus 버튼 클릭');
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <button id="plus">+</button>
+    <span>0</span>
+    <button id="minus">-</button>
+  </body>
+</html>

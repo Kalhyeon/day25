@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <title>Document</title>
+  <script>
+    $(document).ready(function() {
+      $.ajax({
+        url: 'https://sample.bmaster.kro.kr/contacts/1601087500101', method: 'get',
+        success:function(result) {
+          $('#photo').attr('src', result.photo);
+          $('#name').text(result.name);
+          $('#address').text(result.address);
+          $('#tel').text(result.tel);
+        }
+      });
+    });
+  </script>
+</head>
+<body>
+  <table>
+    <tr>
+      <td>사진:</td>
+      <td><img id="photo"></td>
+    </tr>
+    <tr>
+      <td>이름:</td>
+      <td id="name"></td>
+    </tr>
+    <tr>
+      <td>주소:</td>
+      <td id="address"></td>
+    </tr>
+    <tr>
+      <td>연락처:</td>
+      <td id="tel"></td>
+    </tr>
+  </table>
+</body>
+</html>

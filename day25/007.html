@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <title>AJAX 보내기</title>
+  <script>
+    // MVC 방식으로 요청 (request)을 보내면 프론트의 모든 작업은 중지
+    // AJAX 는 현재 수행중인 작업과 병렬로 수행
+    $.ajax({
+      url: 'https://sample.bmaster.kro.kr/contacts', method: 'get',
+      success:function() {
+        // 서버에서 응답이 돌아오면 실행
+        console.log('서버 응답');
+      }
+    });
+
+    const person = {
+      name: '홍길동', age: 20,
+      greeting:function() {
+        console.log('안녕하세요');
+      }
+    }
+    person.greeting();
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
